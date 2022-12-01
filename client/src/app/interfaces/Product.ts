@@ -1,4 +1,4 @@
-export default interface Item {
+export default interface Product {
   name: String;
   category: String;
   rating: Number;
