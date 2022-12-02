@@ -1,1 +1,36 @@
-<p>signup works!</p>
+<form class="flex">
+  <div>
+    <div class="example-container">
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your email</mat-label>
+        <input matInput type="text" />
+      </mat-form-field>
+    </div>
+    <div class="example-container">
+      <mat-form-field appearance="fill" floatLabel="always">
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <button mat-button>Signup</button>
+    <p>
+      Already have an account?
+      <span
+        class="grey cursor-pointer"
+        routerLink="/login"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        >Login</span
+      >
+    </p>
+  </div>
+</form>

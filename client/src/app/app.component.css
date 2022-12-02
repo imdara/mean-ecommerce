@@ -1,0 +1,21 @@
+.flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+#loginBtn {
+  margin-right: 4px;
+}
+
+.w-6.h-6 {
+  width: 18px;
+  height: 18px;
+  outline: none;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

@@ -1,28 +1,36 @@
-<form>
-  <div class="example-container">
-    <mat-form-field appearance="fill">
-      <mat-label>Enter your email</mat-label>
-      <input matInput type="text" />
-    </mat-form-field>
-  </div>
-  <div class="example-container">
-    <mat-form-field appearance="fill" floatLabel="always">
-      <mat-label>Enter your password</mat-label>
-      <input
-        matInput
-        [type]="hide ? 'password' : 'text'"
-        class="example-right-align"
-      />
-      <button
-        mat-icon-button
-        matSuffix
-        (click)="hide = !hide"
-        [attr.aria-label]="'Hide password'"
-        [attr.aria-pressed]="hide"
+<form class="flex">
+  <div>
+    <div class="example-container">
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your email</mat-label>
+        <input matInput type="text" />
+      </mat-form-field>
+    </div>
+    <div class="example-container">
+      <mat-form-field appearance="fill" floatLabel="always">
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <button mat-button>Login</button>
+    <p>
+      New to my app?
+      <span
+        class="grey cursor-pointer"
+        routerLink="/signup"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        >Signup</span
       >
-        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
-      </button>
-    </mat-form-field>
+    </p>
   </div>
-  <button mat-button>Login</button>
 </form>

@@ -18,6 +18,9 @@ import {
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatInputModule } from '@angular/material/input';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,7 @@ import { MatCardModule } from '@angular/material/card';
     LoginComponent,
     SignupComponent,
     OrdersComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +42,8 @@ import { MatCardModule } from '@angular/material/card';
     MatIconModule,
     MatCardModule,
     MatButtonModule,
+    MatToolbarModule,
+    MatInputModule,
   ],
   providers: [
     {
