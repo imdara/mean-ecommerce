@@ -1,4 +1,14 @@
-<h2 class="center">Your cart is empty right now</h2>
+<h2 *ngIf="!cartProducts.length" class="center">
+  Your cart is empty right now
+</h2>
+<button
+  *ngIf="cartProducts.length"
+  (click)="emptyCartHandler()"
+  mat-button
+  class="center"
+>
+  Empty cart
+</button>
 <div *ngFor="let product of cartProducts">
   <mat-card class="example-card">
     <mat-card-header>

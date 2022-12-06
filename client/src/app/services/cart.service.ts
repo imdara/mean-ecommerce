@@ -11,15 +11,10 @@ export class CartService {
 
   getCart = () => this.cart;
 
-  addToCart = (product: Product) => {
-    this.cart.push(product);
-  };
+  addToCart = (product: Product) => this.cart.push(product);
 
-  removeFromCart = (product: Product) => {
-    this.cart = this.cart.filter((item) => item.name !== product.name);
-  };
+  removeFromCart = (product: Product) =>
+    (this.cart = this.cart.filter((item) => item.name !== product.name));
 
-  emptyCart = () => {
-    this.cart = [];
-  };
+  emptyCart = () => (this.cart = []);
 }

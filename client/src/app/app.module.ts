@@ -21,6 +21,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
 import { CartComponent } from './components/cart/cart.component';
+import { NgToastModule } from 'ng-angular-popup';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { CartComponent } from './components/cart/cart.component';
     MatButtonModule,
     MatToolbarModule,
     MatInputModule,
+    NgToastModule,
   ],
   providers: [
     {

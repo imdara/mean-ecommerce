@@ -12,7 +12,6 @@ export class CartComponent implements OnInit {
 
   constructor(private cartServ: CartService) {}
 
-  empty = true;
   cartProducts: any[] = [];
 
   emptyCartHandler = () => this.cartServ.emptyCart();

@@ -1,15 +1,51 @@
-<form class="flex">
+<form class="flex" (submit)="submitHandler($event)">
   <div>
     <div class="example-container">
       <mat-form-field appearance="fill">
+        <mat-label>Enter your first name</mat-label>
+        <input
+          matInput
+          name="firstname"
+          type="text"
+          [(ngModel)]="firstName"
+          required
+        />
+      </mat-form-field>
+    </div>
+    <div class="example-container">
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your last name</mat-label>
+        <input
+          matInput
+          name="lastname"
+          type="text"
+          [(ngModel)]="lastName"
+          required
+        />
+      </mat-form-field>
+    </div>
+    <div class="example-container">
+      <mat-form-field appearance="fill">
         <mat-label>Enter your email</mat-label>
-        <input matInput type="text" />
+        <input
+          matInput
+          name="email"
+          type="email"
+          [(ngModel)]="email"
+          required
+        />
       </mat-form-field>
     </div>
     <div class="example-container">
       <mat-form-field appearance="fill" floatLabel="always">
         <mat-label>Enter your password</mat-label>
-        <input matInput [type]="hide ? 'password' : 'text'" />
+        <input
+          matInput
+          name="password"
+          [type]="hide ? 'password' : 'text'"
+          [(ngModel)]="password"
+          required
+        />
         <button
           mat-icon-button
           matSuffix
@@ -21,7 +57,7 @@
         </button>
       </mat-form-field>
     </div>
-    <button mat-button>Signup</button>
+    <button mat-button type="submit">Signup</button>
     <p>
       Already have an account?
       <span
