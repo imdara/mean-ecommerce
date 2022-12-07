@@ -11,13 +11,8 @@
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <ng-container *ngIf="isInCart">
-      <button (click)="removeFromCartHandler()" mat-button>
-        Remove from cart
-      </button>
-    </ng-container>
-    <ng-container *ngIf="!isInCart">
-      <button (click)="addToCartHandler()" mat-button>Add to cart</button>
-    </ng-container>
+    <button (click)="removeFromCartHandler()" mat-button>
+      Remove from cart
+    </button>
   </mat-card-actions>
 </mat-card>

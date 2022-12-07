@@ -2,3 +2,9 @@
   margin-top: 1%;
   text-align: center;
 }
+
+.flex-center {
+  width: 98%;
+  margin: 2% auto;
+  justify-content: center;
+}

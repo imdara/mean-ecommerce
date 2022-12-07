@@ -22,6 +22,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
 import { CartComponent } from './components/cart/cart.component';
 import { NgToastModule } from 'ng-angular-popup';
+import { CartProductComponent } from './components/cart-product/cart-product.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { NgToastModule } from 'ng-angular-popup';
     SignupComponent,
     OrdersComponent,
     CartComponent,
+    CartProductComponent,
   ],
   imports: [
     BrowserModule,

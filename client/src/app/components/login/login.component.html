@@ -1,4 +1,4 @@
-<form class="flex" (submit)="submitHandler($event)">
+<form class="flex" (ngSubmit)="submitHandler()">
   <div>
     <div class="example-container">
       <mat-form-field appearance="fill">
@@ -7,7 +7,7 @@
           matInput
           name="email"
           type="email"
-          [(ngModel)]="email"
+          [(ngModel)]="loginForm.email"
           required
         />
       </mat-form-field>
@@ -19,7 +19,7 @@
           matInput
           name="password"
           [type]="hide ? 'password' : 'text'"
-          [(ngModel)]="password"
+          [(ngModel)]="loginForm.password"
           required
         />
         <button

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'src/app/services/users.service';
 import { NgToastService } from 'ng-angular-popup';
+import SignupForm from 'src/app/interfaces/SignupForm';
 
 @Component({
   selector: 'app-signup',
@@ -11,34 +12,28 @@ export class SignupComponent implements OnInit {
   constructor(private toast: NgToastService, private userServ: UsersService) {}
 
   hide = true;
-  firstName = '';
-  lastName = '';
-  email = '';
-  password = '';
+  signupForm: SignupForm = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+  };
 
   ngOnInit(): void {}
 
-  submitHandler = (event: any) => {
-    event.preventDefault();
-    this.userServ
-      .signup({
-        firstName: this.firstName,
-        lastName: this.lastName,
-        email: this.email,
-        password: this.password,
-      })
-      .subscribe((res: any) =>
-        res.message == 'User signed up successfully'
-          ? this.toast.success({
-              detail: 'SUCCESS',
-              summary: res.message,
-              duration: 3000,
-            })
-          : this.toast.error({
-              detail: 'ERROR',
-              summary: res.message,
-              duration: 3000,
-            })
-      );
+  submitHandler = () => {
+    this.userServ.signup(this.signupForm).subscribe((res: any) =>
+      res.message == 'User signed up successfully'
+        ? this.toast.success({
+            detail: 'SUCCESS',
+            summary: res.message,
+            duration: 3000,
+          })
+        : this.toast.error({
+            detail: 'ERROR',
+            summary: res.message,
+            duration: 3000,
+          })
+    );
   };
 }

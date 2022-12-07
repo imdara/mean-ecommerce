@@ -14,7 +14,10 @@ export class CartService {
   addToCart = (product: Product) => this.cart.push(product);
 
   removeFromCart = (product: Product) =>
-    (this.cart = this.cart.filter((item) => item.name !== product.name));
+    (this.cart = this.cart.filter((item) => item != product));
 
-  emptyCart = () => (this.cart = []);
+  emptyCart = () => {
+    this.cart = [];
+    return this.cart;
+  };
 }
