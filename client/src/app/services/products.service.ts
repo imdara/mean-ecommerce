@@ -9,5 +9,7 @@ export class ProductsService {
   constructor(private http: HttpClient) {}
 
   getProducts = () =>
-    this.http.get<Product[]>('http://localhost:4000/api/products');
+    this.http.get<Product[]>(
+      'https://imdaras-ecommerce-backend.onrender.com/api/products'
+    );
 }

@@ -6,12 +6,17 @@
   </mat-card-header>
   <img mat-card-image src="{{ product.imageUrl }}" alt="product image" />
   <mat-card-content>
-    <p>
+    <p class="price">
       {{ +product.price | currency : "INR" }}
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button (click)="removeFromCartHandler()" mat-button>
+    <button
+      mat-stroked-button
+      color="primary"
+      (click)="removeFromCartHandler()"
+      mat-button
+    >
       Remove from cart
     </button>
   </mat-card-actions>

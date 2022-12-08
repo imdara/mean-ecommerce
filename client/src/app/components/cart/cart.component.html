@@ -1,6 +1,4 @@
-<h2 *ngIf="!getCartHandler().length" class="center">
-  Your cart is empty right now
-</h2>
+<h2 *ngIf="!getCartHandler().length" class="center">Your cart is empty</h2>
 <div class="flex-center">
   <button
     *ngIf="getCartHandler().length"
@@ -12,4 +10,13 @@
 </div>
 <div *ngFor="let product of getCartHandler()">
   <app-cart-product [product]="product"></app-cart-product>
+</div>
+<div class="flex-center p-bottom">
+  <button
+    *ngIf="getCartHandler().length"
+    (click)="emptyCartHandler()"
+    mat-button
+  >
+    Checkout
+  </button>
 </div>

@@ -12,3 +12,35 @@
   text-overflow: ellipsis;
   max-width: 360px;
 }
+
+.w-5.h-5.text-yellow-300 {
+  color: rgb(255, 238, 0);
+  width: 2rem;
+}
+
+.price {
+  color: rgb(19, 27, 43);
+  font-weight: 600;
+  font-size: large;
+  padding: 0.5rem;
+}
+
+.product-rating {
+  background-color: rgb(134, 110, 110);
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 1rem;
+  font-weight: 500;
+}
+
+.ratings-count {
+  color: rgb(134, 110, 110);
+  margin-left: 1rem;
+  font-weight: 500;
+}
+
+.flex-group {
+  display: flex;
+  align-items: center;
+}

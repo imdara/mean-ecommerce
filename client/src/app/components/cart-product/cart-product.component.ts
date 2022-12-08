@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { NgToastService } from 'ng-angular-popup';
 import Product from 'src/app/interfaces/Product';
 import { CartService } from 'src/app/services/cart.service';
 
@@ -10,9 +11,16 @@ import { CartService } from 'src/app/services/cart.service';
 export class CartProductComponent implements OnInit {
   @Input() product!: Product;
 
-  constructor(private cartServ: CartService) {}
+  constructor(private toast: NgToastService, private cartServ: CartService) {}
 
   ngOnInit(): void {}
 
-  removeFromCartHandler = () => this.cartServ.removeFromCart(this.product);
+  removeFromCartHandler = () => {
+    this.cartServ.removeFromCart(this.product);
+    this.toast.info({
+      detail: 'INFO',
+      summary: 'Removed from cart',
+      duration: 3000,
+    });
+  };
 }

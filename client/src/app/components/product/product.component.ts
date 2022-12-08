@@ -11,10 +11,19 @@ import Product from '../../interfaces/Product';
 export class ProductComponent implements OnInit {
   @Input() product!: Product;
   isInCart: boolean = false;
+  starsArray: any[] = [];
+
+  calculateStars = () => {
+    for (let i = 0; i < Math.round(+this.product.rating); i++) {
+      this.starsArray[i] = i + 1;
+    }
+  };
 
   constructor(private toast: NgToastService, private cartServ: CartService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.calculateStars();
+  }
 
   addToCartHandler = () => {
     this.isInCart = true;

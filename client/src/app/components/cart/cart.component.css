@@ -7,4 +7,9 @@
   width: 98%;
   margin: 2% auto;
   justify-content: center;
+  padding-bottom: 2rem;
+}
+
+.p-bottom {
+  padding-bottom: 2rem;
 }
